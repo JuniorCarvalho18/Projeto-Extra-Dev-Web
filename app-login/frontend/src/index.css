@@ -20,7 +20,12 @@ code {
 
 /* Estilos para a tela de login */
 .login-container {
-	width: 400px;
+	display: flex;
+	width: auto;
+	height: 70vh;
+	flex-direction: column;
+    flex-wrap: wrap;
+	justify-content: center;
 	padding: 20px;
 	background-color: #fff;
 	border-radius: 5px;
@@ -31,7 +36,9 @@ code {
 	left: 50%; /* Alinha ao centro horizontalmente */
 	transform: translate(-50%, -50%); /* Centraliza o container */
 }
-
+h1#Titulo{
+	display: flex;
+}
 .logo {
 	width: 250px; /* Ajuste o tamanho da imagem conforme necessário */
 	margin-bottom: 20px; /* Espaçamento abaixo da imagem */

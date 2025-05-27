@@ -4,8 +4,9 @@ const bcrypt = require("bcrypt");
 const sequelize = require("./database/db");
 const User = require("./models/User");
 const userRoutes = require("./routes/userRoutes");
-const authMiddleware = require("./middleware/authMiddleware");
 const fileRoutes = require("./routes/fileRoutes");
+const postagemRoutes = require("./routes/PostagemRoutes"); 
+const authMiddleware = require("./middleware/authMiddleware");
 
 const app = express();
 const port = 3001;
@@ -17,6 +18,8 @@ app.use(express.json());
 app.use("/users", authMiddleware, userRoutes);
 // Rota de arquivos
 app.use("/files", fileRoutes);
+// Rota de postagens
+app.use("/posts", authMiddleware, postagemRoutes); // Configura a rota de postagens
 
 // Rota de upload de arquivos
 app.use('/uploads', express.static('uploads'));

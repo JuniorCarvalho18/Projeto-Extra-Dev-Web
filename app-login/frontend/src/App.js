@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Login from "./components/Login";
-import Home from "./components/Home";
+import Home from "./components/Home"; // Home será usado para exibir a lista de postagens
+import PostForm from "./components/PostForm"; // Formulário para criar ou editar postagens
 import Dashboard from "./components/Dashboard";
 import Sidebar from "./components/Sidebar";
 import UserList from "./components/UserList";
@@ -62,6 +63,9 @@ function App() {
 						path="/home"
 						element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
 					/>
+					<Route path="/posts" element={<Home />} /> {/* Home exibe a lista de postagens */}
+					<Route path="/posts/new" element={<PostForm />} />
+					<Route path="/posts/edit/:id" element={<PostForm />} />
 					<Route
 						path="/Dashboard"
 						element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />}

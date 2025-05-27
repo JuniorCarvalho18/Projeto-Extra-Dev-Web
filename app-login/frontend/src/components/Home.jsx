@@ -1,35 +1,62 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../services/axiosInstance";
+import { Link } from "react-router-dom";
 
 function Home() {
-	const [users, setUsers] = useState([]);
-	const token = sessionStorage.getItem("token");
+    const [posts, setPosts] = useState([]);
 
-	useEffect(() => {
-		if (!token) {
-			alert("Acesso negado. Faça login.");
-			window.location.href = "/";
-			return;
-		}
+    useEffect(() => {
+        fetchPosts();
+    }, []);
 
-		axiosInstance.get("http://localhost:3001/users", {
-			headers: { Authorization: `Bearer ${token}` }
-		})
-		.then(response => {
-			setUsers(response.data);
-		})
-		.catch(error => {
-			console.error("Erro ao carregar usuários:", error);
-			alert("Token inválido ou expirado.");
-			window.location.href = "/";
-		});
-	}, [token]);
+    const fetchPosts = async () => {
+        try {
+            const token = sessionStorage.getItem("token");
+            const response = await axiosInstance.get("http://localhost:3001/posts", {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            setPosts(response.data);
+        } catch (error) {
+            console.error("Erro ao carregar postagens:", error);
+            alert("Erro ao carregar postagens.");
+        }
+    };
 
-	return (
-		<div className="home-container">
-			
-		</div>
-	);
+    const handleDelete = async (postId) => {
+        try {
+            const token = sessionStorage.getItem("token");
+            await axiosInstance.delete(`http://localhost:3001/posts/${postId}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            alert("Postagem deletada com sucesso!");
+            fetchPosts(); // Atualiza a lista de postagens
+        } catch (error) {
+            console.error("Erro ao deletar postagem:", error);
+            alert("Erro ao deletar postagem.");
+        }
+    };
+
+    return (
+        <div className="home-container">
+            <h2>Home</h2>
+            <button>
+                <Link id="Npost" to="/posts/new">Nova Postagem</Link>
+            </button>
+            <ul>
+                {posts.map(post => (
+                    <li key={post.id}>
+                        {post.texto}
+                        <Link to={`/posts/edit/${post.id}`}>Editar</Link>
+                        <button onClick={() => handleDelete(post.id)}>Deletar</button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 }
 
 export default Home;

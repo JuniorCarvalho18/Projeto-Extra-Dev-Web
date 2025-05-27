@@ -17,9 +17,11 @@ function UserHeader({ user }) {
   return (
     
     <div className="user-header">
-      <h1 id="Header"> Juninho's Blog</h1>
-      <div id="menu">
+      <div id="Header">
         <i id="burguer" className="material-icons"  onClick={CloseSidebar}>menu</i>
+        <h1> Juninho's Blog</h1>
+      </div>
+      <div id="menu">
         <img
           src={`Juninho.jfif`}
           alt="Foto"

@@ -43,7 +43,9 @@ function UserList() {
 	return (
 		<div>
 			<h2>Lista de Usuários</h2>
-			<Link to="/users/new">Novo Usuário</Link>
+			<button>
+				<Link id="Nuser" to="/users/new">Novo Usuário</Link>
+			</button>
 			<ul>
 				{users.map(user => (
 					<li key={user.id}>

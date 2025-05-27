@@ -1,7 +1,7 @@
 /* Estilos globais */
 body {
 	margin: 0;
-	padding: 0 241px;
+	padding: 0 0 0 241px;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 		sans-serif;
@@ -37,7 +37,7 @@ code {
 	left: 50%; /* Alinha ao centro horizontalmente */
 	transform: translate(-50%, -50%); /* Centraliza o container */
 }
-h1#Titulo{
+.Titulo{
 	display: flex;
 }
 .logo {
@@ -52,6 +52,29 @@ i{
     transform: scale(1.1);
     transition: all 0.1s ease-in-out;
 
+}
+.user-header{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+    margin: auto;
+    justify-content: flex-start;
+}
+#Header{
+	width: 100%;
+    background-color: #333;
+    display: flex;
+    margin: auto;
+	padding: 20px;
+    justify-content: center;
+}
+#menu{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 10px; /* Cor de fundo do cabeçalho */
+	color: white; /* Cor do texto */
 }
 input, button {
 	width: 100%;
@@ -135,7 +158,6 @@ a:hover{
 /* Conteúdo principal */
 .content {
 	color: #f4f4f4;
-	padding: 20px;
 	flex: 1; /* Ocupa o restante do espaço */
 	background-color: rgba(60, 60, 60); /* Cor de fundo do conteúdo */
 }

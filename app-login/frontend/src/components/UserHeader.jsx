@@ -15,17 +15,20 @@ function CloseSidebar() {
 
 function UserHeader({ user }) {
   return (
+    
     <div className="user-header">
-      <i id="burguer" className="material-icons"  onClick={CloseSidebar}>menu</i>
-      <img 
-        src={`Juninho.jfif`} 
-        alt="Foto" 
-        className="user-photo" 
-      />
-      <h1> Juninho's Blog</h1>
-      <div>
-        <h4>{user.fullName}</h4>
-        <p>{user.role}</p>
+      <h1 id="Header"> Juninho's Blog</h1>
+      <div id="menu">
+        <i id="burguer" className="material-icons"  onClick={CloseSidebar}>menu</i>
+        <img
+          src={`Juninho.jfif`}
+          alt="Foto"
+          className="user-photo"
+        />
+        <div>
+          <h4>{user.fullName}</h4>
+          <p>{user.role}</p>
+        </div>
       </div>
     </div>
   );

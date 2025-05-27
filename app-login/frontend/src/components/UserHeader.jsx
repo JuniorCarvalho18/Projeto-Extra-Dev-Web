@@ -18,10 +18,11 @@ function UserHeader({ user }) {
     <div className="user-header">
       <i id="burguer" className="material-icons"  onClick={CloseSidebar}>menu</i>
       <img 
-        src={`http://localhost:3001/uploads/${user.photo}`} 
+        src={`Juninho.jfif`} 
         alt="Foto" 
         className="user-photo" 
       />
+      <h1> Juninho's Blog</h1>
       <div>
         <h4>{user.fullName}</h4>
         <p>{user.role}</p>

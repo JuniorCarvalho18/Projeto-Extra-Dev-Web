@@ -149,3 +149,12 @@ a:hover{
   margin: 10px 0;         /* espaço ao redor */
   border: 2px solid #ccc; /* (opcional) borda cinza */
 }
+
+@media screen and (max-width: 1535px) {
+.login-container{
+    height: auto;
+	margin: 70px 0;
+	align-items: center;
+}
+
+}

@@ -2,12 +2,18 @@ import React from 'react';
 
 function CloseSidebar() {
   const Sidebar = document.querySelector('.sidebar');
+  const body = document.querySelector('body');
+  const burguer = document.querySelector('i');
 
   if (Sidebar) {
     if (Sidebar.style.display === 'flex' || Sidebar.style.display === '') {
       Sidebar.style.display = 'none';
+      body.style.margin = '0';
+      burguer.style.left = '20px';
     } else {
       Sidebar.style.display = 'flex';
+      body.style.margin = '0 0 0 241px';
+      burguer.style.left = '241px';
     }
     Sidebar.style.transition = '0.5s';
   }

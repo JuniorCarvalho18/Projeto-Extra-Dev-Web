@@ -27,12 +27,7 @@ function Home() {
 
 	return (
 		<div className="home-container">
-			<h1>Bem Vindo</h1>
-			<ul>
-				{users.map(user => (
-					<li key={user.id}>{user.fullName} ({user.role})</li>
-				))}
-			</ul>
+			
 		</div>
 	);
 }

@@ -16,7 +16,8 @@ function Sidebar({ updateAuthStatus }) {
 	return (
 		<div className="sidebar">
 			<ul>
-				<li><Link to="/home">Dashboard</Link></li>
+			<li><Link to="/Home">Home</Link></li>
+				<li><Link to="/Dashboard">Dashboard</Link></li>
 				{role === "admin" && ( // Mostra o link de "Usuários" apenas para admin
 					<li><Link to="/users">Usuários</Link></li>
 				)}

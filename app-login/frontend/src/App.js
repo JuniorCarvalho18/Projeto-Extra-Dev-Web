@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import Dashboard from "./components/Dashboard";
 import Sidebar from "./components/Sidebar";
 import UserList from "./components/UserList";
 import UserForm from "./components/UserForm";
@@ -60,6 +61,10 @@ function App() {
 					<Route
 						path="/home"
 						element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
+					/>
+					<Route
+						path="/Dashboard"
+						element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />}
 					/>
 					<Route
 						path="/users"

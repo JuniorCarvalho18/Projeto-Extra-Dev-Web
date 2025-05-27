@@ -43,7 +43,15 @@ h1#Titulo{
 	width: 250px; /* Ajuste o tamanho da imagem conforme necessário */
 	margin-bottom: 20px; /* Espaçamento abaixo da imagem */
 }
+i{
+	padding: 1%;
+}
+#burguer:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.1s ease-in-out;
 
+}
 input, button {
 	width: 100%;
 	margin-top: 10px;
@@ -81,6 +89,8 @@ a:hover{
 
 /* Sidebar */
 .sidebar {
+	display: flex;
+	flex-direction: column;
 	position: fixed; 
     top: 0; 
     left: 0;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Login from "./components/Login";
-import Home from "./components/Home"; // Home será usado para exibir a lista de postagens
-import PostForm from "./components/PostForm"; // Formulário para criar ou editar postagens
+import Home from "./components/Home"; 
+import PostForm from "./components/PostForm";
 import Dashboard from "./components/Dashboard";
 import Sidebar from "./components/Sidebar";
 import UserList from "./components/UserList";

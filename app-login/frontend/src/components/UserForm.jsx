@@ -77,7 +77,7 @@ const handleSubmit = async (e) => {
 };
 
   return (
-    <div>
+    <div className="container">
       <h2>{id ? "Editar Usuário" : "Novo Usuário"}</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Nome Completo" value={fullName} onChange={(e) => setFullName(e.target.value)} required />

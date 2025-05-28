@@ -26,8 +26,8 @@ function Dashboard() {
 	}, [token]);
 
 	return (
-		<div className="home-container">
-			<h1>Bem Vindo</h1>
+		<div className="container">
+			<h1>Dashboard</h1>
 			<ul>
 				{users.map(user => (
 					<li key={user.id}>{user.fullName} ({user.role})</li>

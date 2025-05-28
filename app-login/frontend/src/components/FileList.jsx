@@ -60,7 +60,7 @@ function FileList() {
   };
 
   return (
-    <div class="home-container">
+    <div className="container">
       <h2>Arquivos PDF</h2>
       <form onSubmit={handleUpload}>
         <input 

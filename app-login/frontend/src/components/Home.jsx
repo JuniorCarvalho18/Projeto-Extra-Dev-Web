@@ -41,7 +41,7 @@ function Home() {
     };
 
     return (
-        <div className="home-container">
+        <div className="container">
             <h2>Home</h2>
             <button>
                 <Link id="Npost" to="/posts/new">Nova Postagem</Link>

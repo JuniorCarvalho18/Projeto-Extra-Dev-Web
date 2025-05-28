@@ -41,7 +41,7 @@ function UserList() {
 	};
 
 	return (
-		<div class="home-container">
+		<div className="container">
 			<h2>Lista de Usuários</h2>
 			<button>
 				<Link id="Nuser" to="/users/new">Novo Usuário</Link>

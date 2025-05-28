@@ -26,11 +26,13 @@ function PostForm() {
     }
   }, [id]);
 
-  const handleSubmit = async (e) => {
+  const handlePostSubmit = async (e) => {
     e.preventDefault();
 
     const postData = { texto };
     const token = sessionStorage.getItem("token");
+
+    console.log("Dados enviados:", postData); // Log para verificar os dados enviados
 
     try {
       let postResponse;
@@ -44,7 +46,7 @@ function PostForm() {
         });
       }
 
-      // Após criar ou atualizar, se tiver imagem, envia a foto:
+// Após criar ou atualizar, se tiver imagem, envia a foto:
       if (photo) {
         const formData = new FormData();
         formData.append("photo", photo);
@@ -68,9 +70,9 @@ function PostForm() {
   return (
     <div className="container">
       <h2>{id ? "Editar Postagem" : "Nova Postagem"}</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handlePostSubmit}>
         <textarea
-          placeholder="Digite o texto da postagem"
+          placeholder="Digite o texto"
           value={texto}
           onChange={(e) => setTexto(e.target.value)}
           required

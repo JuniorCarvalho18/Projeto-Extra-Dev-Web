@@ -76,7 +76,7 @@ i{
 	color: white; /* Cor do texto */
 }
 input, button {
-	width: 84%;
+	width: -webkit-fill-available;
 	margin-top: 10px;
 	padding: 10px;
 	border: 1px solid #ccc;
@@ -100,16 +100,21 @@ a{
 ul {
 	width: 80%;
 }
-#Npost{
-	color: #fff;
-	text-decoration: none;	
+textarea{
+	width: -webkit-fill-available;
+}
+.NewS{
+	display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
 }
 a:hover{
 	color: #0056b3;
-}
-#Nuser{
-	color: #fff;
-	text-decoration: none;
 }
 /* Layout principal */
 .app-container {

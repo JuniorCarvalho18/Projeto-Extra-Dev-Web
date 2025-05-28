@@ -16,11 +16,18 @@ exports.listPostagens = async (req, res) => {
 // Criar uma nova postagem
 exports.createPostagem = async (req, res) => {
   try {
-    let { texto } = req.body;
+    console.log("Dados recebidos:", req.body); // Log para verificar os dados recebidos
+    const { texto } = req.body;
     texto = sanitizeHtml(texto);
+
+    if (!texto) {
+      return res.status(400).json({ error: "O campo 'texto' é obrigatório." });
+    }
+
     const postagem = await Postagem.create({ texto });
     res.status(201).json(postagem);
   } catch (error) {
+    console.error("Erro ao criar postagem:", error); // Log para identificar o erro
     res.status(500).json({ error: "Erro ao criar postagem." });
   }
 };

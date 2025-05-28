@@ -63,12 +63,28 @@ function App() {
 						path="/home"
 						element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
 					/>
-					<Route path="/posts" element={<Home />} /> {/* Home exibe a lista de postagens */}
-					<Route path="/posts/new" element={<PostForm />} />
-					<Route path="/posts/edit/:id" element={<PostForm />} />
+					
 					<Route
 						path="/Dashboard"
 						element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />}
+					/>
+					<Route
+						path="/posts"
+						element={
+							isAuthenticated && isAdmin() ? <Home /> : <Navigate to="/login" />
+						}
+					/>
+					<Route
+						path="/posts/new"
+						element={
+							isAuthenticated && isAdmin() ? <PostForm /> : <Navigate to="/login" />
+						}
+					/>
+					<Route
+						path="/posts/edit/:id"
+						element={
+							isAuthenticated && isAdmin() ? <PostForm /> : <Navigate to="/login" />
+						}
 					/>
 					<Route
 						path="/users"

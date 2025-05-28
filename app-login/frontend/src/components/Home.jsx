@@ -43,9 +43,7 @@ function Home() {
     return (
         <div className="container">
             <h2>Home</h2>
-            <button>
-                <Link id="Npost" to="/posts/new">Nova Postagem</Link>
-            </button>
+                <Link className="NewS" to="/posts/new">Nova Postagem</Link>
             <ul>
                 {posts.map(post => (
                     <li key={post.id}>

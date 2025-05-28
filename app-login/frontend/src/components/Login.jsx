@@ -47,8 +47,8 @@ function Login({ updateAuthStatus }) {
 
 	return (
 		<div className="login-container">
-			<h1 class="Titulo">Juninho's blog</h1>
-			<p>Para postar fotos do Juninho Ruindade Pura</p>
+			<h1 className="Titulo">Juninho's blog</h1>
+			<p>Para falar do Juninho Ruindade Pura</p>
 			<img src="/Juninho.jfif" alt="Logo" className="logo" />
 			<h2>Login</h2>
 			<form onSubmit={handleSubmit}>
